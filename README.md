@@ -15,7 +15,7 @@ Online version of my Heat Signature Replay Redo program to record and edit Heat 
 ## How It Works
 1. When you start a recording, the program will read the game's memory to keep track of the in-game speed. At the same time, it will begin taking screenshots of gameplay at 30 fps.
 2. Once you stop the recording, the screenshots are compiled into a "raw" .mp4 file that will save to the `heatSigReplay` folder.
-3. This .mp4 along with a list of speed change timestamps are each uploaded to an AWS S3 bucket.
+3. This .mp4 along with a list of speed change timestamps are both uploaded separately to two AWS S3 buckets.
 4. After the upload is complete, the program will notify an AWS Lambda function of that fact.
 5. The Lambda function will then edit the footage into an `out` .mp4 which is uploaded to a third S3 bucket.
 6. The Lambda function then notifies this program that is has completed the edit and successfully put out the file.
