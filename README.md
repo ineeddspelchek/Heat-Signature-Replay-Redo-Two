@@ -12,6 +12,8 @@ That being said, if you do wish to run this program regardless, know the followi
 # Heat-Signature-Replay-Redo-Two
 Online version of my Heat Signature Replay Redo program to record and edit Heat Signature clips into realtime speed 
 
+## [Demo](https://github.com/ineeddspelchek/Heat-Signature-Replay-Redo-Two)
+
 ## How It Works
 1. When you start a recording, the program will read the game's memory to keep track of the in-game speed. At the same time, it will begin taking screenshots of gameplay at 30 fps.
 2. Once you stop the recording, the screenshots are compiled into a "raw" .mp4 file that will save to the `heatSigReplay` folder.
@@ -22,7 +24,6 @@ Online version of my Heat Signature Replay Redo program to record and edit Heat 
 7. This program will finally download the file from that S3 bucket into the `heatSigReplay` folder.
 
 # How To
-[Demo](https://github.com/ineeddspelchek/Heat-Signature-Replay-Redo-Two)
 1. Download the latest release.
 2. Extract `heatSigReplay.zip`
 3. Whitelist `heatSigReplay.exe` on Windows Defender. 
