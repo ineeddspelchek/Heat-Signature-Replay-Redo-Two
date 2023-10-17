@@ -25,7 +25,7 @@ Online version of my Heat Signature Replay Redo program to record and edit Heat 
 1. Download the latest release.
 2. Extract `heatSigReplay.zip`
 3. Whitelist `heatSigReplay.exe` on Windows Defender. 
-4. Run Heat Signature.
+4. Run Heat Signature **in full screen**.
 5. Run `heatSigReplay.exe`.
 6. Wait a few seconds for text to appear in the window and then follow its directions.
 7. Play.
