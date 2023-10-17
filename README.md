@@ -22,6 +22,7 @@ Online version of my Heat Signature Replay Redo program to record and edit Heat 
 7. This program will finally download the file from that S3 bucket into the `heatSigReplay` folder.
 
 # How To
+[Demo](https://github.com/ineeddspelchek/Heat-Signature-Replay-Redo-Two)
 1. Download the latest release.
 2. Extract `heatSigReplay.zip`
 3. Whitelist `heatSigReplay.exe` on Windows Defender. 
