@@ -20,7 +20,8 @@ def lambda_handler(event, context):
     return edit(times, key, s3client)
 
 def edit(times, key, s3client): #create and edit raw footage from speed change timestamps
-    unpauseOffset = .12 #how much later to end unpause to make sure its frames aren't included
+    pauseOffset = -.05 #how much earlier to start pause to make sure its frames aren't included
+    unpauseOffset = .05 #how much later to end unpause to make sure its frames aren't included
 
 
     inVid = VideoFileClip("/tmp/raw.mp4") #raw input clip
@@ -29,13 +30,18 @@ def edit(times, key, s3client): #create and edit raw footage from speed change t
     for i in range(0, len(times)-1): #for all speed changes excluding the last
         if(times[i][1] != 0): #if not a pause
             if(i > 0 and times[i-1][1] == 0): #if a previous change exists and it is a pause, add a bit of an offset to remove any excess pause frames
-                clip = inVid.subclip(times[i][0]+unpauseOffset, times[i+1][0])
-                clip = clip.fx(vfx.speedx, 1/times[i][1])
-                clips.append(clip)
+                clipstart = min(times[i][0]+unpauseOffset, inVid.duration)
             else: #if previous change is not a pause or none exists
-                clip = inVid.subclip(times[i][0], times[i+1][0])
-                clip = clip.fx(vfx.speedx, 1/times[i][1])
-                clips.append(clip)
+                clipstart = min(times[i][0], inVid.duration)
+                
+            if(times[i+1][1] == 0): #if next speed change is a pause, cut earlier to remove any excess pause frames
+                clipend = max(times[i+1][0]+pauseOffset, 0)
+            else: #if next change is not a pause
+                clipend = times[i+1][0]
+                
+            clip = inVid.subclip(clipstart, clipend)
+            clip = clip.fx(vfx.speedx, 1/times[i][1])
+            clips.append(clip)
             
     if(len(times) > 0): #if speed changes exist (should always since starting speed counts as a speed change)
         if(times[-1][0] < inVid.duration): #if start of last speed change doesn't exceed raw footage stop (could happen due to raw footage being slightly too fast)
