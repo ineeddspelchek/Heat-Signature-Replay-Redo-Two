@@ -61,7 +61,7 @@ keepFastMo = lines[3][-6].upper() != "F" #when True, doesn't slow down fast mo (
 
 ###################################
 
-generalOffset = -.08 #how much earlier to set timestamps to account for delay in fetching timescale variable
+generalOffset = 0 #how much earlier to set timestamps to account for delay in fetching timescale variable
 
 ######################################################################################################################
     
