@@ -21,7 +21,7 @@ def lambda_handler(event, context):
 
 def edit(times, key, s3client): #create and edit raw footage from speed change timestamps
     pauseOffset = -.05 #how much earlier to start pause to make sure its frames aren't included
-    unpauseOffset = .05 #how much later to end unpause to make sure its frames aren't included
+    unpauseOffset = .02 #how much later to end unpause to make sure its frames aren't included
 
 
     inVid = VideoFileClip("/tmp/raw.mp4") #raw input clip
