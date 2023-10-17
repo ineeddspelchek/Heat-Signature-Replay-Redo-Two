@@ -20,7 +20,7 @@ def lambda_handler(event, context):
     return edit(times, key, s3client)
 
 def edit(times, key, s3client): #create and edit raw footage from speed change timestamps
-    pauseOffset = -.05 #how much earlier to start pause to make sure its frames aren't included
+    pauseOffset = -.03 #how much earlier to start pause to make sure its frames aren't included
     unpauseOffset = .02 #how much later to end unpause to make sure its frames aren't included
 
 
