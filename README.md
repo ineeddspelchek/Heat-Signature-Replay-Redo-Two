@@ -12,7 +12,9 @@ That being said, if you do wish to run this program regardless, know the followi
 # Heat-Signature-Replay-Redo-Two
 Online version of my Heat Signature Replay Redo program to record and edit Heat Signature clips into realtime speed 
 
-## [Demo](https://www.youtube.com/watch?v=-Fy8rSEDWlI)
+## Demo: https://youtu.be/_kLNoAAmNTE
+* Before: https://youtu.be/TkRscQGykRc
+* After: https://youtu.be/PNfvd8_kjmo
 
 ## How It Works
 1. When you start a recording, the program will read the game's memory to keep track of the in-game speed. At the same time, it will begin taking screenshots of gameplay at 30 fps.
