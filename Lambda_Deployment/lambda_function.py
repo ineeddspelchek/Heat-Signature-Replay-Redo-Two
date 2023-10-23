@@ -5,7 +5,7 @@ from moviepy.editor import * #lets you edit videos
 def lambda_handler(event, context):
     key = str(event)
     
-    s3client = boto3.client("s3", region_name="us-east-1", aws_access_key_id="", aws_secret_access_key="")
+    s3client = boto3.client("s3", region_name="us-east-1")
     
     
     rawfile = open("/tmp/raw.mp4", "wb")
