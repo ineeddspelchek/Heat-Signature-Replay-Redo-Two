@@ -11,6 +11,9 @@ That being said, if you do wish to run this program regardless, know the followi
 
 # Heat-Signature-Replay-Redo-Two
 Online version of my Heat Signature Replay Redo program to record and edit Heat Signature clips into realtime speed 
+### Other Versions:
+* https://github.com/ineeddspelchek/Heat-Signature-Replay-Redo
+* https://github.com/ineeddspelchek/Heat-Signature-Replay
 
 ## Demo: https://youtu.be/_kLNoAAmNTE
 * Before: https://youtu.be/TkRscQGykRc
